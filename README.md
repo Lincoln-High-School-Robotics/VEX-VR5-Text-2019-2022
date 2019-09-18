@@ -1,2 +1,3 @@
 # VEX-VR5-Text
-Link
+VEXcode V5 Text Download:
+https://www.vexrobotics.com/vexcode-download
