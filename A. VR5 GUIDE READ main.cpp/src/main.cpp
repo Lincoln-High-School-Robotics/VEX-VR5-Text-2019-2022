@@ -35,7 +35,7 @@ int main(){
 
 
   task::sleep(4000);                                   //  Same as first sleep; This one will run the motor for 4 Seconds
-                                                       //  Before we stop it
+                                                       //  Before we stop it with the next command
 
   RightMotor.stop();                                   //  Stops the motor
    LeftMotor.stop();                                   //  VarN.stop();
