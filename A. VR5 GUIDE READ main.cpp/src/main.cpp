@@ -10,7 +10,7 @@ using namespace vex;
 //-------------------------DECLARATIONS---------------------------
 //We can give it the VarN that we want
 
-//kW   VarN         Kw      Parm
+//kw   VarN         Kw      Parm
 brain Brain;                                //No Parameters needed for the Brain
 motor RightMotor = motor(PORT1, false);     //motor(portNumber, Reverse?);
 motor LeftMotor =  motor(PORT2, true);      //motor(portNumber, Reverse?);
