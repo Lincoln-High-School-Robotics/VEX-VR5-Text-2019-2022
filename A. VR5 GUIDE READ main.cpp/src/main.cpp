@@ -22,7 +22,7 @@ we need to call it by the VarN we give it.   e.g: Brain (VarN). NOT brain (Kw)*/
 int main(){
 
 
-  task::sleep(2000);                                   //  Delay, Wait.    task::sleep(TimeInMiliseconds);
+  task::sleep(2000);                                   //  Delay, Wait.    task::sleep(TimeInMilliseconds);
 
   Brain.Screen.print("Code Successfully started");     //  Prints text in the Brain's Screen   
                                                        //  VarN.Screen.print("TextToPrint");
