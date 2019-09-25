@@ -14,6 +14,7 @@ using namespace vex;
 brain Brain;                                //No Parameters needed for the Brain
 motor RightMotor = motor(PORT1, false);     //motor(portNumber, Reverse?);
 motor LeftMotor =  motor(PORT2, true);      //motor(portNumber, Reverse?);
+controller Control;
 
 /*Note that declarations just need to be made once; To call or use a Variable
 we need to call it by the VarN we give it.   e.g: Brain (VarN). NOT brain (Kw)*/
@@ -38,8 +39,7 @@ int main(){
                                                        //  Before we stop it with the next command
 
   RightMotor.stop();                                   //  Stops the motor
-   LeftMotor.stop();                                   //  VarN.stop();
-
+   LeftMotor.stop();                                   //  VarN.stop()
 
 
 }
