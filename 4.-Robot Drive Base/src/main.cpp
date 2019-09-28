@@ -2,10 +2,11 @@
 
 //Abreviations:       Kw: Keyword    VarN: Variable Name     Parm: Parameters
 
+//  This code controls the Drive Base in which one (1) Joystick controls both motors
+//  (This is what the Math formula was for)
+//  Free: 1 Full Joystick
 
 #include "vex.h"         // VEX Library, Always include
-
-
 using namespace vex;     
 
 
@@ -16,32 +17,28 @@ motor rightMotor = motor(PORT1, false);
 motor leftMotor =  motor(PORT2, true);      
 controller Control;
 
-double LM, RM, Vector;
+double LeftMotorSpeed, RightMotorSpead, Vector;     // double variables (Real Numbers)
+
 
 
 
 int main(){
 
-  //task::sleep(1000);
+  Brain.Screen.print("Robot Drive (1 Joystick) has successfully started\n");
 
-  //Brain.Screen.print("Joystick Test has successfully started\n");
-
-while(true){
-
-  //task::sleep(500);
-  //Brain.Screen.print("Axis 1 position = %d", Control.Axis1.position());
-  //Brain.Screen.print(Control.Axis1.position());
+while(true){     //Repeats Forever
 
   Vector = sqrt(pow(Control.Axis1.position(), 2) + pow(Control.Axis2.position(), 2));
-  //Brain.Screen.print(int(Vector));
 
-   LM = sqrt(pow(Vector * (cos (atan (Control.Axis2.position()/Control.Axis1.position()))),2) + pow(Vector * (sin (atan (Control.Axis2.position()/Control.Axis1.position()))),2));
+
+   LeftMotorSpeed = sqrt(pow(Vector * (cos (atan (Control.Axis2.position()/Control.Axis1.position()))),2) + pow(Vector * (sin (atan (Control.Axis2.position()/Control.Axis1.position()))),2));
    
-   leftMotor.setVelocity(LM, velocityUnits::pct);
+   leftMotor.setVelocity(LeftMotorSpeed, velocityUnits::pct);
    leftMotor.spin(directionType::fwd);
 
 
 }
 
+return 0;                                            // ALWAYS AT THE END OF A PROGRAM
 
 }

@@ -41,5 +41,6 @@ int main(){
   RightMotor.stop();                                   //  Stops the motor
    LeftMotor.stop();                                   //  VarN.stop()
 
+  return 0;                                            // ALWAYS AT THE END OF A PROGRAM
 
 }
