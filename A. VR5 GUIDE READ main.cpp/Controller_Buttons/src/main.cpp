@@ -22,12 +22,14 @@ int main() {
 
   task::sleep(2000);
 
-  Brain.Screen.print("Controller and Buttons.v5 has initialized successfully");
+  //Brain.Screen.print("Controller and Buttons.v5 has initialized successfully");
 
   //testMotor.setVelocity(60, velocityUnits::pct);
 
   while(true){
-
+Brain.Screen.print(Control.Axis1.position());
+task::sleep(100);
+Brain.Screen.clearScreen();
     if(!Control.ButtonX.pressing()){
 
       testMotor.setVelocity(60, velocityUnits::pct);
@@ -38,20 +40,21 @@ int main() {
 
       }
 
-      if(Control.ButtonA.pressing()){
+      else if(Control.ButtonA.pressing()){
 
       testMotor.spin(directionType::rev);
 
       }
     }else{
 
-       testMotor.setVelocity(Control.Axis1.value(), velocityUnits::pct);
+       testMotor.setVelocity(Control.Axis1.position(), velocityUnits::pct);
        testMotor.spin(directionType::undefined);
 
     }
 
+     
 
-    testMotor.stop();
+    //testMotor.stop();
 
   }
 }
