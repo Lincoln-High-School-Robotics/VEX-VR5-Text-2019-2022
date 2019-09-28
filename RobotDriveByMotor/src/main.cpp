@@ -28,11 +28,16 @@ int main(){
   // Axis3 = Left  Joystick Y Axis
   // Axis4 = Left  Joystick X Axis
 
+  // value() = [-117, 117]
+  // position() = [-100, 100]
+
+  // e.g   Control.Axis2.position() = Value of Y Axis of right Joystick between [-100, 100]
+
 while(true){                                                                     //Repeats forever
 
 
-   leftMotor.setVelocity(Control.Axis2.position(), velocityUnits::pct);
-   leftMotor.spin(directionType::fwd);
+   leftMotor.setVelocity(Control.Axis2.position(), velocityUnits::pct);    //  As setVelocity([-100, 100] %, velocityUnits::pct)
+   leftMotor.spin(directionType::fwd);                                     //  has a range [-100, 100], then we use position() to give it the direct value
    rightMotor.setVelocity(Control.Axis3.position(), velocityUnits::pct);
    rightMotor.spin(directionType::fwd);
 
