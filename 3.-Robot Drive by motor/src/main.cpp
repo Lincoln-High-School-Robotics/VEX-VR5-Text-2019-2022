@@ -15,14 +15,18 @@ using namespace vex;
 brain Brain;                                
 motor rightMotor = motor(PORT1, false);     
 motor leftMotor =  motor(PORT2, false);      
-controller Control;                     // controller VarN     Initializes a variable for the control; No parameters needed
+controller Control;                     // controller VarN    
+                                        // Initializes a variable for the control; No parameters needed
 
 
 int main(){
 
 
-  //To access the Joystick we use controllerVarN.AxisNumber.value/position()
-  //where:
+  // To access the Joystick we use 
+  // controllerVarN.AxisNumber.value/position()
+  // where:
+  // controllerVarN = The variable's name of the controller previously declared
+
   // Axis1 = Right Joystick X Axis
   // Axis2 = Right Joystick Y Axis
   // Axis3 = Left  Joystick Y Axis

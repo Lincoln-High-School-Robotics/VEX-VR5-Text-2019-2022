@@ -1,35 +1,33 @@
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*    Module:       main.cpp                                                  */
-/*    Author:       C:\Users\super                                            */
-/*    Created:      Tue Sep 24 2019                                           */
-/*    Description:  V5 project                                                */
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
+//#GioByte10
+
+//Abreviations:       Kw: Keyword    VarN: Variable Name     Parm: Parameters
+
+//This Code contains examples of how to program ALL the Controller buttons
+
 #include "vex.h"
 
 using namespace vex;
 
-// A global instance of vex::brain used for printing to the V5 brain screen
+
 brain       Brain;
 motor       testMotor(PORT1, false);
-controller  Control;
+controller  Control;                   // controller VarN     
+                                       // Initializes a variable for the control; No parameters needed  
 
-// define your global instances of motors and other devices here
+
+   // Programmin Buttons is very easy using if's an a boolean value (true/false) of a Button being or not pressed:
+   // 
 
 
 int main() {
 
   task::sleep(2000);
+  Brain.Screen.print("Buttons.v5 has been initialized successfully");
 
-  //Brain.Screen.print("Controller and Buttons.v5 has initialized successfully");
-
-  //testMotor.setVelocity(60, velocityUnits::pct);
 
   while(true){
-Brain.Screen.print(Control.Axis1.position());
-task::sleep(100);
-Brain.Screen.clearScreen();
+
+
     if(!Control.ButtonX.pressing()){
 
       testMotor.setVelocity(60, velocityUnits::pct);
@@ -45,16 +43,7 @@ Brain.Screen.clearScreen();
       testMotor.spin(directionType::rev);
 
       }
-    }else{
-
-       testMotor.setVelocity(Control.Axis1.position(), velocityUnits::pct);
-       testMotor.spin(directionType::undefined);
-
     }
-
-     
-
-    //testMotor.stop();
 
   }
 }
