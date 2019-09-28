@@ -29,7 +29,7 @@ int main(){
                                                        //  VarN.Screen.print("TextToPrint");
 
   RightMotor.setVelocity(50, velocityUnits::pct);      //  Just set the motor's speed to an X%, but doesn't run it
-   LeftMotor.setVelocity(50, velocityUnits::pct);      //  VarN.setVelocity( (0, 100] %, velocityUnits::pct);
+   LeftMotor.setVelocity(50, velocityUnits::pct);      //  VarN.setVelocity( [-100, 100] %, velocityUnits::pct);
 
   RightMotor.spin(directionType::fwd);                 //  Runs the motor at the previous configured speed
    LeftMotor.spin(directionType::rev);                 //  VarN.spin(directionType::fwd/rev);
