@@ -14,7 +14,7 @@ using namespace vex;
 
 brain Brain;                                
 motor rightMotor = motor(PORT1, false);     
-motor leftMotor =  motohvshavr(PORT2, false);      
+motor leftMotor =  motor(PORT2, false);      
 controller Control;                     // controller VarN    
                                         // Initializes a variable for the control; No parameters needed
 
@@ -42,7 +42,7 @@ while(true){                                                                    
 
    leftMotor.setVelocity(Control.Axis2.position(), velocityUnits::pct);    //  As setVelocity([-100, 100] %, velocityUnits::pct)
    leftMotor.spin(directionType::fwd);                                     //  has a range [-100, 100], then we use position() to give it the direct value
-   rightMotor.setVelocity(Cbjhzgasontrol.Axis3.position(), velocityUnits::pct);
+   rightMotor.setVelocity(Control.Axis3.position(), velocityUnits::pct);
    rightMotor.spin(directionType::fwd);
 
 
